@@ -1,0 +1,270 @@
+{
+  "version": "Notebook/1.0",
+  "items": [
+    {
+      "type": 1,
+      "content": {
+        "json": "# Microsoft Copilots Workbook\nMITRE ATT&CK Copilot is designed to provide intelligent answers and insights into the MITRE ATT&CK (Adversarial Tactics, Techniques, and Common Knowledge) framework."
+      },
+      "name": "text - 2"
+    },
+    {
+      "type": 9,
+      "content": {
+        "version": "KqlParameterItem/1.0",
+        "parameters": [
+          {
+            "id": "9c6531a8-0d8a-4412-863c-4a391bf372e3",
+            "version": "KqlParameterItem/1.0",
+            "name": "TimeRange",
+            "label": "Time Range",
+            "type": 4,
+            "typeSettings": {
+              "selectableValues": [
+                {
+                  "durationMs": 300000
+                },
+                {
+                  "durationMs": 900000
+                },
+                {
+                  "durationMs": 1800000
+                },
+                {
+                  "durationMs": 3600000
+                },
+                {
+                  "durationMs": 14400000
+                },
+                {
+                  "durationMs": 43200000
+                },
+                {
+                  "durationMs": 86400000
+                },
+                {
+                  "durationMs": 172800000
+                },
+                {
+                  "durationMs": 259200000
+                },
+                {
+                  "durationMs": 604800000
+                },
+                {
+                  "durationMs": 1209600000
+                },
+                {
+                  "durationMs": 2419200000
+                },
+                {
+                  "durationMs": 2592000000
+                },
+                {
+                  "durationMs": 5184000000
+                },
+                {
+                  "durationMs": 7776000000
+                }
+              ]
+            },
+            "timeContext": {
+              "durationMs": 86400000
+            },
+            "value": {
+              "durationMs": 86400000
+            }
+          }
+        ],
+        "style": "above",
+        "queryType": 0,
+        "resourceType": "microsoft.operationalinsights/workspaces"
+      },
+      "name": "parameters - 2"
+    },
+    {
+      "type": 3,
+      "content": {
+        "version": "KqlItem/1.0",
+        "query": "customEvents\n| summarize count() by name",
+        "size": 3,
+        "timeContextFromParameter": "TimeRange",
+        "queryType": 0,
+        "resourceType": "microsoft.insights/components",
+        "crossComponentResources": [
+          ""
+        ],
+        "visualization": "piechart",
+        "chartSettings": {
+          "seriesLabelSettings": [
+            {
+              "seriesName": "TopicAction",
+              "color": "amethyst"
+            },
+            {
+              "seriesName": "TopicStart",
+              "color": "blue"
+            },
+            {
+              "seriesName": "TopicEnd",
+              "color": "blueDark"
+            },
+            {
+              "seriesName": "BotMessageReceived",
+              "color": "lightBlue"
+            },
+            {
+              "seriesName": "BotMessageSend",
+              "color": "green"
+            },
+            {
+              "seriesName": "GenerativeAnswers",
+              "color": "orange"
+            }
+          ]
+        }
+      },
+      "customWidth": "33",
+      "name": "query - 2"
+    },
+    {
+      "type": 3,
+      "content": {
+        "version": "KqlItem/1.0",
+        "query": "customEvents\n| summarize count() by client_Type",
+        "size": 3,
+        "timeContextFromParameter": "TimeRange",
+        "queryType": 0,
+        "resourceType": "microsoft.insights/components",
+        "crossComponentResources": [
+          ""
+        ],
+        "visualization": "piechart",
+        "chartSettings": {
+          "seriesLabelSettings": [
+            {
+              "seriesName": "TopicAction",
+              "color": "amethyst"
+            },
+            {
+              "seriesName": "TopicStart",
+              "color": "blue"
+            },
+            {
+              "seriesName": "TopicEnd",
+              "color": "blueDark"
+            },
+            {
+              "seriesName": "BotMessageReceived",
+              "color": "lightBlue"
+            },
+            {
+              "seriesName": "BotMessageSend",
+              "color": "green"
+            },
+            {
+              "seriesName": "GenerativeAnswers",
+              "color": "orange"
+            }
+          ]
+        }
+      },
+      "customWidth": "33",
+      "name": "query - 2 - Copy"
+    },
+    {
+      "type": 3,
+      "content": {
+        "version": "KqlItem/1.0",
+        "query": "customEvents\n| summarize count() by bin(timestamp, 1h)",
+        "size": 0,
+        "timeContextFromParameter": "TimeRange",
+        "queryType": 0,
+        "resourceType": "microsoft.insights/components",
+        "crossComponentResources": [
+          ""
+        ],
+        "visualization": "areachart",
+        "chartSettings": {
+          "seriesLabelSettings": [
+            {
+              "seriesName": "TopicAction",
+              "color": "amethyst"
+            },
+            {
+              "seriesName": "TopicStart",
+              "color": "blue"
+            },
+            {
+              "seriesName": "TopicEnd",
+              "color": "blueDark"
+            },
+            {
+              "seriesName": "BotMessageReceived",
+              "color": "lightBlue"
+            },
+            {
+              "seriesName": "BotMessageSend",
+              "color": "green"
+            },
+            {
+              "seriesName": "GenerativeAnswers",
+              "color": "orange"
+            }
+          ]
+        }
+      },
+      "customWidth": "33",
+      "name": "query - 2 - Copy - Copy"
+    },
+    {
+      "type": 3,
+      "content": {
+        "version": "KqlItem/1.0",
+        "query": "customEvents",
+        "size": 1,
+        "timeContextFromParameter": "TimeRange",
+        "queryType": 0,
+        "resourceType": "microsoft.insights/components",
+        "crossComponentResources": [
+          ""
+        ],
+        "visualization": "table",
+        "chartSettings": {
+          "seriesLabelSettings": [
+            {
+              "seriesName": "TopicAction",
+              "color": "amethyst"
+            },
+            {
+              "seriesName": "TopicStart",
+              "color": "blue"
+            },
+            {
+              "seriesName": "TopicEnd",
+              "color": "blueDark"
+            },
+            {
+              "seriesName": "BotMessageReceived",
+              "color": "lightBlue"
+            },
+            {
+              "seriesName": "BotMessageSend",
+              "color": "green"
+            },
+            {
+              "seriesName": "GenerativeAnswers",
+              "color": "orange"
+            }
+          ]
+        }
+      },
+      "name": "query - 2 - Copy - Copy"
+    }
+  ],
+  "fallbackResourceIds": [
+    ""
+  ],
+  "fromTemplateId": "sentinel-UserWorkbook",
+  "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/workbook.json"
+}
